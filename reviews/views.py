@@ -21,7 +21,7 @@ def review_list(request):
     for json_file in json_files:
         file_path = os.path.join(reviews_dir, json_file)
         try:
-            with open(file_path, 'r') as file:
+            with open(file_path, 'r', encoding='utf-8') as file:  # specify UTF-8 encoding
                 data = json.load(file)
                 # Ensure the expected fields are present
                 if 'username' in data and 'review' in data:
